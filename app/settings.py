@@ -123,15 +123,15 @@ WSGI_APPLICATION = "app.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "old_default": {
+    "default": {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'westudyapp',
-        'USER': 'westudyapp_user',
-        'PASSWORD': 'Qj2DDbzMrBPaSnVjz1ZXuznofBMeHb8q',
-        'HOST': 'dpg-cha7fsak728r885dk8h0-a.oregon-postgres.render.com',
+        'NAME': 'dbvitura',
+        'USER': 'vitura',
+        'PASSWORD': 'GJKIFIu6ZlKK7BMghshFAQGjzrU1ZeR9',
+        'HOST': 'dpg-cjg16qr6fquc73a6pak0-a.oregon-postgres.render.com',
         'PORT': '5432',
     },
-    "default": {
+    "old_default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
