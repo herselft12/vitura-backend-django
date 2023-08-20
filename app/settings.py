@@ -31,7 +31,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://ariki-party.onrender.com",
     # Puedes agregar más orígenes permitidos si es necesario
 ]
-ALLOWED_HOSTS = ['*','localhost',]
+ALLOWED_HOSTS = ['*','localhost','https://ariki-party.onrender.com',]
 # RENDER
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
