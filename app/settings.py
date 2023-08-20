@@ -27,13 +27,16 @@ SECRET_KEY = "django-insecure-t5u7ax&y9)fi#e28@^mk8h@ppe(itr1b1$rrn8_6=u))0-j!6(
 #DEBUG = 'RENDER' not in os.environ
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-CORS_ALLOWED_ORIGINS = [
-    "https://ariki-party.onrender.com",
-    # Puedes agregar más orígenes permitidos si es necesario
-]
-ALLOWED_HOSTS = ['*','localhost','https://ariki-party.onrender.com',]
+
 # RENDER
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+
+ALLOWED_HOSTS = ['*','localhost','https://ariki-party.onrender.com',]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://ariki-party.onrender.com",
+]
+
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
@@ -91,6 +94,7 @@ THIRD_PARTY_APPS = [
 INSTALLED_APPS = INTERNAL_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -98,7 +102,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "app.urls"
